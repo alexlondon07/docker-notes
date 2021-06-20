@@ -1,0 +1,51 @@
+services:
+  XamppPhp:
+    image: tomsik68/xampp
+    restart: always
+    ports:
+      - "1341:80"
+      - "1340:22"
+      - "3305:3306"
+
+    volumes:
+      - ./my_web_pages:/opt/lampp/htdocs
+      - ./my_apache_conf:/etc/apache2/httpd.conf
+volumes:
+  XamppPhp:
+
+
+
+
+
+##Creadential SSH
+# username: root
+# password: root
+# Example:
+# ssh root@localhost -p 1340
+# Console interactive into docker container
+# docker exec -ti php-services_XamppPhp_1  bash
+# restart service
+# docker exec php-services_XamppPhp_1 /opt/lampp/lampp restart
+
+#docker-compose -f composer-xampp.yaml up
+
+
+#CREATE USER 'alexlondon07'@'%' IDENTIFIED BY 'alexlondon07';
+#CREATE USER 'alexlondon07'@'localhost' IDENTIFIED BY 'alexlondon07';
+#CREATE USER 'alexlondon07'@'127.0.0.1' IDENTIFIED BY 'alexlondon07';
+
+#GRANT ALL PRIVILEGES ON * . * TO 'alexlondon07'@'%';
+#GRANT ALL PRIVILEGES ON * . * TO 'alexlondon07'@'localhost';
+#GRANT ALL PRIVILEGES ON * . * TO 'alexlondon07'@'127.0.0.1';
+
+#COMITT
+#FLUSH PRIVILEGES;
+
+#SHOW GRANTS FOR 'alexlondon07'@'localhost';
+
+
+#Reinicia el servicio
+#docker exec dockercomposers_XamppPhp_1 /opt/lampp/lampp restart
+
+#GRANT ALL PRIVILEGES ON *.* TO 'alexlondon07'@'%'  IDENTIFIED BY 'alexlondon07' WITH GRANT OPTION;
+#FLUSH PRIVILEGES;
